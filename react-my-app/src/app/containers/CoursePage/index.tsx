@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { Car } from "../../components/car";
-import Carousel, { Dots, slidesToShowPlugin, autoplayPlugin } from "@brainhubeu/react-carousel";
+import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
 
-const TopCarsContainer = styled.div`
+const CoursesContainer = styled.div`
   ${tw`
-        // max-w-screen-2xl
+        max-w-screen-lg
         w-full
         flex
         flex-col
@@ -40,22 +40,25 @@ const CarsContainer = styled.div`
         flex
         flex-wrap
         justify-center
+        items-center
         mt-7
         md:mt-10
 
     `};
 `;
 
-export function CoursesHomepage() {
+export function TopCoursesDetail() {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
   const cars = [
     <Car
       name="Daily Writing Initiative"
       thumbnailSrc="https://source.unsplash.com/y02jEX_B0O0/400x300"
-      info=""
+      info="This is a free initiative and open to all. Daily morning at 8 am we post a
+       Question on our Telegram Group. Aspirants have to write 
+       the answers and upload to us."
     />,
     <Car
       name="Essay Writing Module"
@@ -87,29 +90,22 @@ export function CoursesHomepage() {
   const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 1.5);
 
   return (
-    <TopCarsContainer>
+    <CoursesContainer>
+      <Title> Explore our top courses </Title>
       <CarsContainer>
         <Carousel
           value={current}
           onChange={setCurrent}
           slides={cars}
           plugins={[
-            'centered',
             "clickToChange",
             {
               resolve: slidesToShowPlugin,
               options: {
-                numberOfSlides: 2,
+                numberOfSlides: 3,
               },
             },
-            // { 
-            //   resolve: autoplayPlugin,
-            //   options: {
-            //     interval: 2000,
-            //   }
-            // }
           ]}
-          // animationSpeed={1000}
           breakpoints={{
             640: {
               plugins: [
@@ -126,7 +122,7 @@ export function CoursesHomepage() {
                 {
                   resolve: slidesToShowPlugin,
                   options: {
-                    numberOfSlides: 1,
+                    numberOfSlides: 2,
                   },
                 },
               ],
@@ -135,6 +131,6 @@ export function CoursesHomepage() {
         ></Carousel>
         <Dots value={current} onChange={setCurrent} number={numberOfDots} />
       </CarsContainer>
-    </TopCarsContainer>
+    </CoursesContainer>
   );
 }

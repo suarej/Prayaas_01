@@ -7,7 +7,7 @@ import { Marginer } from "../../components/marginer";
 import { NavBar } from "../../components/navbar";
 import { AboutUs } from "./aboutUs";
 import { CoursesOffered } from "./courses";
-import { TopCars } from "./topCars";
+import { CoursesHomepage } from "./topCars";
 import { TopSection } from "./topSection";
 
 const PageContainer = styled.div`${tw`
@@ -23,16 +23,20 @@ overflow-x-hidden
 export function HomePage () {
     return <PageContainer>
         <NavBar/>
+
+        <CoursesHomepage/>
+
+
         <TopSection/>
         <Marginer direction="vertical" margin="4em"/>
-        <TopCars/>
-
+        
         {/* <BookCard/> */}
         {/* <Marginer direction="vertical" margin="10em"/> */}
-        <CoursesOffered/>
+        <CoursesOffered/>   
         <Marginer direction="vertical" margin="8em"/>
         <AboutUs/>
         <Marginer direction="vertical" margin="8em"/>
+
         <Footer/>
 
     </PageContainer>

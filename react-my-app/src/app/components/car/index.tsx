@@ -9,9 +9,9 @@ import { Button } from "../button";
 interface ICarProps extends ICar {}
 
 const CarContainer = styled.div`
-  width: 16.5em;
-  min-height: 22.2em;
-  max-height: 22.2em;
+  width: 90%;
+  min-height: 27.2em;
+  max-height: 27.2em;
   box-shadow: 0 1.3px 17px -2px rgba(0, 0, 0, 0.4);
   ${tw`
         flex
