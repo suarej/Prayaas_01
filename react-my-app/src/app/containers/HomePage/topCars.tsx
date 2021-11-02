@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Car } from "../../components/car";
 import Carousel, { Dots, slidesToShowPlugin, autoplayPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
+import { CourseHomepage } from "../../components/courseHomepage";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -51,40 +51,40 @@ export function CoursesHomepage() {
 
   const [current, setCurrent] = useState(1);
 
-  const cars = [
-    <Car
+  const HomeCourses = [
+    <CourseHomepage
       name="Daily Writing Initiative"
       thumbnailSrc="https://source.unsplash.com/y02jEX_B0O0/400x300"
       info=""
     />,
-    <Car
+    <CourseHomepage
       name="Essay Writing Module"
       thumbnailSrc="https://source.unsplash.com/dul2ronIcO0/400x300"
       info="ABCD of writing a good essay."
     />,
-    <Car
+    <CourseHomepage
       name="Pareekshan 1.0"
       thumbnailSrc="https://source.unsplash.com/wD1LRb9OeEo/400x300"
       info="Targeting for 2022 Prelim attempt ? Then this specially customized course is for you."
     />,
-    <Car
+    <CourseHomepage
       name="Pareekshan 2.0"
       thumbnailSrc="https://source.unsplash.com/-fRAIQHKcc0/400x300"
       info="Fast track version of 1.0. Those who have already given at-least one attempt at prelims should join this course."
     />,
-    <Car
+    <CourseHomepage
       name="Ethics Module"
       thumbnailSrc="https://source.unsplash.com/veNb0DDegzE/400x300"
       info="Special Module for GS 4 Paper"
     />,
-    <Car
+    <CourseHomepage
       name="MCQ : All Your Round"
       thumbnailSrc="https://source.unsplash.com/CiMITAJtb6I/400x300"
       info="Prelims is a big hurdles for many. Solve Daily 10 MCQs with us."
     />,
   ];
 
-  const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 1.5);
+  const numberOfDots = isMobile ? HomeCourses.length : Math.ceil(HomeCourses.length / 1.5);
 
   return (
     <TopCarsContainer>
@@ -92,7 +92,7 @@ export function CoursesHomepage() {
         <Carousel
           value={current}
           onChange={setCurrent}
-          slides={cars}
+          slides={HomeCourses}
           plugins={[
             'centered',
             "clickToChange",
