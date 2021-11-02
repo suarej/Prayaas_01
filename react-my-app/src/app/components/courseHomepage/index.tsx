@@ -129,7 +129,7 @@ const SmallText = styled.p`
     `};
 `;
 
-export function Car(props: ICarProps) {
+export function CourseHomepage(props: ICarProps) {
   const { thumbnailSrc, name, info } = props;
 
   return (
@@ -171,7 +171,7 @@ export function Car(props: ICarProps) {
                 </CarDetail>
             </CarDetailsContainer> */}
 
-      <RentButton text="Read more..." />
+      {/* <RentButton text="Read more..." /> */}
     </CarContainer>
   );
 }

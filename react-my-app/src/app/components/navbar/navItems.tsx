@@ -41,40 +41,50 @@ export function NavItems() {
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm});
 
     if(isMobile) {
-
         return (
             <Menu right styles={menuStyles}>
                 <ListContainer>
         <NavItem menu>
-            <a href="#"> Home </a>
+            <a href="/"> Home </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> Courses </a>
+            <a href="/courses"> Courses </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> Abouts Us </a>
+            <a href="#"> Test Series </a>
+        </NavItem>
+        <NavItem menu>
+            <a href="#"> PYQ </a>
         </NavItem>
         <NavItem menu>
             <a href="#"> Contact Us </a>
         </NavItem>
+        <NavItem menu>
+            <a href="#"> Daily Answer Writing </a>
+        </NavItem>
     </ListContainer>
-
-
             </Menu>
         )
     }
     return <ListContainer>
         <NavItem>
-            <a href="#"> Home </a>
+            <a href="/"> Home </a>
         </NavItem>
         <NavItem>
-            <a href="#"> Courses </a>
+            <a href="courses"> Courses </a>
         </NavItem>
         <NavItem>
-            <a href="#"> About Us </a>
+            <a href="#"> Test Series </a>
+        </NavItem>
+        <NavItem>
+            <a href="#"> PYQ </a>
         </NavItem>
         <NavItem>
             <a href="#"> Contact Us </a>
         </NavItem>
+        <NavItem>
+            <a href="#"> Daily Answer Writing </a>
+        </NavItem>
+        
     </ListContainer>
 }

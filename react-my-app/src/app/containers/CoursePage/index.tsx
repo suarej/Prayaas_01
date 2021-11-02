@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Carousel, { Dots, slidesToShowPlugin, autoplayPlugin } from "@brainhubeu/react-carousel";
+import { Car } from "../../components/car";
+import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
-import { CourseHomepage } from "../../components/courseHomepage";
 
-const TopCarsContainer = styled.div`
+const CoursesContainer = styled.div`
   ${tw`
-        // max-w-screen-2xl
+        max-w-screen-lg
         w-full
         flex
         flex-col
@@ -40,76 +40,72 @@ const CarsContainer = styled.div`
         flex
         flex-wrap
         justify-center
+        items-center
         mt-7
         md:mt-10
 
     `};
 `;
 
-export function CoursesHomepage() {
+export function TopCoursesDetail() {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
-  const HomeCourses = [
-    <CourseHomepage
+  const cars = [
+    <Car
       name="Daily Writing Initiative"
       thumbnailSrc="https://source.unsplash.com/y02jEX_B0O0/400x300"
-      info=""
+      info="This is a free initiative and open to all. Daily morning at 8 am we post a
+       Question on our Telegram Group. Aspirants have to write 
+       the answers and upload to us."
     />,
-    <CourseHomepage
+    <Car
       name="Essay Writing Module"
       thumbnailSrc="https://source.unsplash.com/dul2ronIcO0/400x300"
       info="ABCD of writing a good essay."
     />,
-    <CourseHomepage
+    <Car
       name="Pareekshan 1.0"
       thumbnailSrc="https://source.unsplash.com/wD1LRb9OeEo/400x300"
       info="Targeting for 2022 Prelim attempt ? Then this specially customized course is for you."
     />,
-    <CourseHomepage
+    <Car
       name="Pareekshan 2.0"
       thumbnailSrc="https://source.unsplash.com/-fRAIQHKcc0/400x300"
       info="Fast track version of 1.0. Those who have already given at-least one attempt at prelims should join this course."
     />,
-    <CourseHomepage
+    <Car
       name="Ethics Module"
       thumbnailSrc="https://source.unsplash.com/veNb0DDegzE/400x300"
       info="Special Module for GS 4 Paper"
     />,
-    <CourseHomepage
+    <Car
       name="MCQ : All Your Round"
       thumbnailSrc="https://source.unsplash.com/CiMITAJtb6I/400x300"
       info="Prelims is a big hurdles for many. Solve Daily 10 MCQs with us."
     />,
   ];
 
-  const numberOfDots = isMobile ? HomeCourses.length : Math.ceil(HomeCourses.length / 1.5);
+  const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 1.5);
 
   return (
-    <TopCarsContainer>
+    <CoursesContainer>
+      <Title> Explore our top courses </Title>
       <CarsContainer>
         <Carousel
           value={current}
           onChange={setCurrent}
-          slides={HomeCourses}
+          slides={cars}
           plugins={[
-            'centered',
             "clickToChange",
             {
               resolve: slidesToShowPlugin,
               options: {
-                numberOfSlides: 2,
+                numberOfSlides: 3,
               },
             },
-            // { 
-            //   resolve: autoplayPlugin,
-            //   options: {
-            //     interval: 2000,
-            //   }
-            // }
           ]}
-          // animationSpeed={1000}
           breakpoints={{
             640: {
               plugins: [
@@ -126,7 +122,7 @@ export function CoursesHomepage() {
                 {
                   resolve: slidesToShowPlugin,
                   options: {
-                    numberOfSlides: 1,
+                    numberOfSlides: 2,
                   },
                 },
               ],
@@ -135,6 +131,6 @@ export function CoursesHomepage() {
         ></Carousel>
         <Dots value={current} onChange={setCurrent} number={numberOfDots} />
       </CarsContainer>
-    </TopCarsContainer>
+    </CoursesContainer>
   );
 }
