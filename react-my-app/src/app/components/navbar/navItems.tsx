@@ -51,16 +51,16 @@ export function NavItems() {
             <a href="/courses"> Courses </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> Test Series </a>
+            <a href="TestSeries"> Test Series </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> PYQ </a>
+            <a href="PYQ"> PYQ </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> Contact Us </a>
+            <a href="ContactUs"> Contact Us </a>
         </NavItem>
         <NavItem menu>
-            <a href="#"> Daily Answer Writing </a>
+            <a href="DAW"> Daily Answer Writing </a>
         </NavItem>
     </ListContainer>
             </Menu>
@@ -74,16 +74,16 @@ export function NavItems() {
             <a href="courses"> Courses </a>
         </NavItem>
         <NavItem>
-            <a href="#"> Test Series </a>
+            <a href="TestSeries"> Test Series </a>
         </NavItem>
         <NavItem>
-            <a href="#"> PYQ </a>
+            <a href="PYQ"> PYQ </a>
         </NavItem>
         <NavItem>
-            <a href="#"> Contact Us </a>
+            <a href="ContactUs"> Contact Us </a>
         </NavItem>
         <NavItem>
-            <a href="#"> Daily Answer Writing </a>
+            <a href="DAW"> Daily Answer Writing </a>
         </NavItem>
         
     </ListContainer>

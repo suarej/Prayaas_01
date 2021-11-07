@@ -15,7 +15,7 @@ const FooterContainer = styled.div`
         flex
         flex-col
         min-w-full
-        pt-10
+        // pt-10
         pb-2
         items-center
         justify-center
@@ -40,8 +40,8 @@ const AboutContainer = styled.div`
         md:mr-auto
         pl-10
         pr-10
-        md:pl-3
-        md:pr-3
+        // md:pl-3
+        // md:pr-3
     `};
 `;
 
@@ -52,8 +52,9 @@ const BottomContainer = styled.div`
         max-w-screen-2xl
         justify-center
         md:justify-center
-        mt-7
-        md:mt-1
+        mt-4
+        pt-0
+        md:mt-0
         md:ml-5
         
     `};
@@ -80,7 +81,7 @@ const AboutText = styled.div`
 const SectionContainer = styled.div`
   ${tw`
         w-full
-        md:w-auto
+        md:w-60
         pl-10
         flex
         flex-col
@@ -89,7 +90,7 @@ const SectionContainer = styled.div`
         md:pl-3
         md:pr-3
         mt-7
-        md:mt-16
+        md:mt-12
     `};
 `;
 
@@ -119,8 +120,8 @@ const ListItem = styled.li`
 
 const HeaderTitle = styled.div`
   ${tw`
-        text-2xl
-        font-bold
+        text-sm
+        font-thin
         text-white
         mb-3
     `};
@@ -151,8 +152,9 @@ const HorizontalContainer = styled.div`
 const SmallText = styled.h6`
   ${tw`
         text-sm
+        font-thin
         text-white
-        w-full
+        w-auto 
     `};
 `;
 
@@ -162,51 +164,10 @@ export function Footer() {
       <InnerContainer>
         <AboutContainer>
           <Logo color="white" bgColor="dark" />
-          {/* <AboutText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            dolorum impedit, itaque tempore ratione, ut rerum sunt at
-            accusantium magni reprehenderit quia deserunt inventore! Vel illum
-            dignissimos eaque ratione molestias.
-          </AboutText> */}
         </AboutContainer>
-        <SectionContainer>
-          <HeaderTitle> Our links </HeaderTitle>
-          <LinksList>
-            <ListItem>
-              <a href="#"> Home </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> About Us </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> Services </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> Home </a>{" "}
-            </ListItem>
-          </LinksList>
-        </SectionContainer>
 
         <SectionContainer>
-          <HeaderTitle> Other links </HeaderTitle>
-          <LinksList>
-            <ListItem>
-              <a href="#"> FAQ </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> Contact US </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> Support </a>{" "}
-            </ListItem>
-            <ListItem>
-              <a href="#"> Privacy Policy </a>{" "}
-            </ListItem>
-          </LinksList>
-        </SectionContainer>
-
-        <SectionContainer>
-          <HeaderTitle> Call Now / Whatsapp </HeaderTitle>
+          <HeaderTitle> Telegram / Whatsapp </HeaderTitle>
           <HorizontalContainer>
             <RedIcon>
               <FontAwesomeIcon icon={faPhoneAlt} />
@@ -232,8 +193,7 @@ export function Footer() {
               <FontAwesomeIcon icon={faMapMarkerAlt} />
             </RedIcon>
             <SmallText>
-              Near DNYAN PRABODHINI SCHOOL, Chhatrapati Sambhaji Road,
-               Sadashiv Peth, Pune, Maharashtra, India
+              Sadashiv Peth, Pune.
             </SmallText>
           </HorizontalContainer>
         </SectionContainer>
@@ -241,7 +201,7 @@ export function Footer() {
 
       <BottomContainer>
         <CopyrighText>
-          Copyright &copy; {new Date().getFullYear()} Prayaas. All rights
+          &copy; {new Date().getFullYear()} Prayaas. All rights
           reserved.
         </CopyrighText>
       </BottomContainer>

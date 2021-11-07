@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { HomePage } from './app/containers/HomePage';
 import {BrowserRouter, Route, Switch, RouteComponentProps} from 'react-router-dom'
 import routes from './app/containers/HomePage/routes';
+import { NavBar } from './app/components/navbar';
 
 const AppContainer = styled.div`${tw`
 w-full
