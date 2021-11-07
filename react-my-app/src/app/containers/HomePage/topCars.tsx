@@ -6,6 +6,9 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
 import { CourseHomepage } from "../../components/courseHomepage";
+import Pareekshan2 from '../../../assets/images2/Pareekshan2.0.jpeg'
+import Pareekshan1 from '../../../assets/images2/Pareekshan1.0.jpeg'
+
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -19,8 +22,7 @@ const TopCarsContainer = styled.div`
         pl-4
         md:pl-0
         md:pr-0
-        md:mt-10
-
+        // md:mt-10
     `};
 `;
 
@@ -41,7 +43,7 @@ const CarsContainer = styled.div`
         flex-wrap
         justify-center
         mt-7
-        md:mt-10
+        // md:mt-10
 
     `};
 `;
@@ -54,32 +56,32 @@ export function CoursesHomepage() {
   const HomeCourses = [
     <CourseHomepage
       name="Daily Writing Initiative"
-      thumbnailSrc="https://source.unsplash.com/y02jEX_B0O0/400x300"
+      thumbnailSrc={Pareekshan1}
       info=""
     />,
     <CourseHomepage
       name="Essay Writing Module"
-      thumbnailSrc="https://source.unsplash.com/dul2ronIcO0/400x300"
+      thumbnailSrc={Pareekshan2}
       info="ABCD of writing a good essay."
     />,
     <CourseHomepage
       name="Pareekshan 1.0"
-      thumbnailSrc="https://source.unsplash.com/wD1LRb9OeEo/400x300"
+      thumbnailSrc={Pareekshan2}
       info="Targeting for 2022 Prelim attempt ? Then this specially customized course is for you."
     />,
     <CourseHomepage
       name="Pareekshan 2.0"
-      thumbnailSrc="https://source.unsplash.com/-fRAIQHKcc0/400x300"
+      thumbnailSrc={Pareekshan2}
       info="Fast track version of 1.0. Those who have already given at-least one attempt at prelims should join this course."
     />,
     <CourseHomepage
       name="Ethics Module"
-      thumbnailSrc="https://source.unsplash.com/veNb0DDegzE/400x300"
+      thumbnailSrc={Pareekshan2}
       info="Special Module for GS 4 Paper"
     />,
     <CourseHomepage
       name="MCQ : All Your Round"
-      thumbnailSrc="https://source.unsplash.com/CiMITAJtb6I/400x300"
+      thumbnailSrc={Pareekshan2}
       info="Prelims is a big hurdles for many. Solve Daily 10 MCQs with us."
     />,
   ];

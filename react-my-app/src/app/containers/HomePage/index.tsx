@@ -9,6 +9,7 @@ import { AboutUs } from "./aboutUs";
 import { CoursesOffered } from "./courses";
 import { CoursesHomepage } from "./topCars";
 import { TopSection } from "./topSection";
+import {VideoSectionHomepage} from './videos';
 
 const PageContainer = styled.div`${tw`
 w-full
@@ -35,7 +36,9 @@ export function HomePage () {
         <CoursesOffered/>   
         <Marginer direction="vertical" margin="8em"/>
         <AboutUs/>
-        <Marginer direction="vertical" margin="8em"/>
+        {/* <Marginer direction="vertical" margin="8em"/> */}
+        <VideoSectionHomepage/>
+        <Marginer direction="vertical" margin="5em"/>
 
         <Footer/>
 

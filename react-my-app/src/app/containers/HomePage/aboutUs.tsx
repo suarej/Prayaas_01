@@ -9,7 +9,7 @@ const AboutUsContainer = styled.div`
     ${tw`
         w-full
         flex
-        flex-wrap
+        flex-col
         items-center
         justify-center
         pt-2
@@ -22,33 +22,58 @@ const AboutUsContainer = styled.div`
     `};
 `;
 
-const CarContainer = styled.div`
-    height:15em;
+const StepsContainer = styled.div`
+  ${tw`
+        flex
+        justify-evenly
+        flex-wrap
+        // mt-7
+        lg:mt-16
+    `};
+`;
+
+const StepContainer = styled.div`
+  ${tw`
+        flex
+        flex-col
+        md:w-80
+        items-center
+        transition-colors
+        hover:text-red-500
+    `};
+`;
+
+const ImageContainer = styled.div`
+    height:16em;
     // margin-left:-30px;
 
     img {
-        width:auto;
-        height:100%;
+        width:16em;
+        height:16em;
+        border-radius: 50%;
     }
 
     @media (min-width: ${SCREENS.md}) {
-        height:28em;
+        height:18em;
+        width:18em;
     }
     @media (min-width: ${SCREENS.lg}) {
-        height:30em;
+        height:20em;
+        width:20em;
     }
     @media (min-width: ${SCREENS["2xl"]}) {
-        height:35em;
+        height:25em;
+        width: 25em;
         margin-left:0;
     }
 `;
 
 const InfoContainer = styled.div`
     ${tw`
-        md:w-1/2
+        // md:w-1/2
         flex
         flex-col
-        md:ml-6
+        // md:ml-6
         2xl:ml-16
     `};
 `;
@@ -59,7 +84,7 @@ const Title = styled.h1`
         text-center
         text-black
         text-2xl
-        mb-4
+        mb-2
         md:text-5xl
         font-extrabold
         md:font-black
@@ -74,7 +99,7 @@ const InfoText = styled.p`
         md:text-base
         text-gray-500
         font-normal
-        mt-4
+        // mt-4
 
     `};
 `;
@@ -83,19 +108,61 @@ export function AboutUs() {
     return (
         <AboutUsContainer>
                 <Title> About Us ! </Title>
-
-            <CarContainer>
+            <StepsContainer>
+                <StepContainer>
+                <ImageContainer>
                 <img src={JeepImage} alt="bio" />
-            </CarContainer>
+            </ImageContainer>
             <InfoContainer>
                 <InfoText>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, a, laudantium ipsam accusamus, 
                     commodi necessitatibus soluta repellat expedita velit molestiae aspernatur culpa quaerat hic 
-                    deleniti dolorem ad delectus! Veniam, corporis cumque sit quia libero doloremque aut at similique 
-                    reiciendis ullam officiis optio deleniti sunt quibusdam atque error beatae voluptates veritatis.
                 </InfoText>
-
             </InfoContainer>
+                </StepContainer>
+
+                <StepContainer>
+                <ImageContainer>
+                <img src={JeepImage} alt="bio" />
+            </ImageContainer>
+            <InfoContainer>
+                <InfoText>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, a, laudantium ipsam accusamus, 
+                    commodi necessitatibus soluta repellat expedita velit molestiae aspernatur culpa quaerat hic 
+                </InfoText>
+            </InfoContainer>
+                </StepContainer>
+
+                <StepContainer>
+                <ImageContainer>
+                <img src={JeepImage} alt="bio" />
+            </ImageContainer>
+            <InfoContainer>
+                <InfoText>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, a, laudantium ipsam accusamus, 
+                    commodi necessitatibus soluta repellat expedita velit molestiae aspernatur culpa quaerat hic 
+                </InfoText>
+            </InfoContainer>
+                </StepContainer>
+
+                <StepContainer>
+                <ImageContainer>
+                <img src={JeepImage} alt="bio" />
+            </ImageContainer>
+            <InfoContainer>
+                <InfoText>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, a, laudantium ipsam accusamus, 
+                    commodi necessitatibus soluta repellat expedita velit molestiae aspernatur culpa quaerat hic 
+                </InfoText>
+            </InfoContainer>
+                </StepContainer>
+
+            
+
+            
+            </StepsContainer>
+
+           
         </AboutUsContainer>
     )
 }

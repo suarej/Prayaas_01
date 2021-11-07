@@ -37,11 +37,14 @@ ${({color}: any) => color === "white" ? tw`text-white` : tw`text-black`}
 
 const Image = styled.div`
     ${tw`
-        h-20
-        ml--12
+        h-36
+        ml--20
+        pt-5
+        md:h-28
+        md:pl-12
+        md:pt-4
         md:ml--28
-        md:h-48
-        md:mt-16
+        md:h-32
     `};
     img{
         width: auto;
@@ -51,10 +54,13 @@ const Image = styled.div`
 
 const LogoImage = styled.div`
 ${tw`
-h-28
-ml--16
-md:h-60
-md:mt-16
+h-36
+pl-0
+ml--20
+md:h-28
+md:pl-8
+pt-4
+md:h-44
 md:ml--32
 `};
 
@@ -71,14 +77,9 @@ export function Logo(props: ILogoProps) {
 
     return <LogoContainer>
         <Image>
-
             <img src={bgColor === "dark" ? CarLogoDarkImg : CarLogoImg} alt="car-logo"></img>
         </Image>
-        {/* <LogoText color={color || "dark"}>
-            Your Car .
-        </LogoText> */}
         <LogoImage>
-
             <img src={NameLogo}/>
         </LogoImage>
     </LogoContainer>
